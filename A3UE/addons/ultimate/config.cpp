@@ -8,7 +8,7 @@ class CfgPatches
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {QDOUBLES(PREFIX,core)};
+        requiredAddons[] = {"A3A_Ultimate"}; // make sure this loads after Ultimate
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
@@ -16,7 +16,8 @@ class CfgPatches
     };
 };
 
-class A3A 
+class A3U
 {
-    #include "Templates.hpp"
+    #include "config\plane\cfgPlaneLoadouts.hpp"
+    #include "config\cfgForbiddenItems.hpp"
 };

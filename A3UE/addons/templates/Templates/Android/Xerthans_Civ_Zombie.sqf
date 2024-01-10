@@ -97,17 +97,15 @@ private _pressTemplate = {
 
 // This array (and the weights one below it), defines units and stuff that get used in towns
 private _specialUnits = [
-    "SSV_Unit_Android_Corrupted",
-    "SSV_Unit_Android_Corrupted_SL",
-    "SSV_Unit_Android_Corrupted_Melee",
-    "SSV_Unit_Android_Corrupted_Dasher"
+    "SSV_Unit_Vanguard_Xerthan",
+    "SSV_Unit_Vanguard_Xerthan_Melee",
+    "JMSJEFF_yasher_war_warrior"
 ];
 
 private _specialUnitsWeights = [
     1.0,
-    0.7,
     0.5,
-    0.15
+    0.25
 ];
 
 private _prefix = "militia";
