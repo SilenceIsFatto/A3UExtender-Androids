@@ -12,6 +12,8 @@
 ## Requirements
 **[Steam Workshop: Antistasi Ultimate](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032)**
 
+**[Steam Workshop: Android Ascension](https://steamcommunity.com/sharedfiles/filedetails/?id=2940744533)**
+
 **[Steam Workshop: Android Ascension - Vanguard Expansion](https://steamcommunity.com/sharedfiles/filedetails/?id=2999610783)**
 
 **[Steam Workshop: WebKnight's Zombies and Creatures](https://steamcommunity.com/sharedfiles/filedetails/?id=2789152015)**

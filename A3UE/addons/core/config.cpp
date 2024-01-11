@@ -15,3 +15,8 @@ class CfgPatches
         VERSION_CONFIG;
     };
 };
+
+class cfgVehicles
+{
+    #include "cfgVehicles.hpp"
+};

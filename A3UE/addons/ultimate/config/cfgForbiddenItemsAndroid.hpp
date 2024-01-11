@@ -1,11 +1,11 @@
 class SSV_unlimited_base : forbidden_unlimited_base 
 {
-    addons[] = {"WBK_ZombieCreatures", "SSV_Android_Zombies", "SSV_Vanguard"};
+    addons[] = {"WBK_ZombieCreatures", "SSV_Android_Zombies", "SSV_Vanguard"}; // same as the Templates\Android\templates.hpp requirements
 };
 
 class SSV_limited_base : forbidden_limited_base 
 {
-    addons[] = {"WBK_ZombieCreatures", "SSV_Android_Zombies", "SSV_Vanguard"};
+    addons[] = {"WBK_ZombieCreatures", "SSV_Android_Zombies", "SSV_Vanguard"}; // same as the Templates\Android\templates.hpp requirements
 };
 
 // Helmets (No armor values, so no point)
@@ -31,7 +31,6 @@ class SSV_Helmet_Vanguard_QRF : SSV_unlimited_base {};
 class SSV_Helmet_Vanguard_Soldier : SSV_unlimited_base {};
 class SSV_Helmet_Vanguard_Stealth : SSV_unlimited_base {};
 class SSV_Helmet_Vanguard_Worker : SSV_unlimited_base {};
-
 
 // Masks (No armor values, so no point)
 class SSV_Mask_Vanguard_Bushi : SSV_unlimited_base {};

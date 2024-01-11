@@ -10,30 +10,33 @@
 
 private _civCarsWithWeights = [
     "SSV_Vehicle_Android_Ifrit", 1.0,
-    "SSV_Vehicle_Android_Strider_Ruined", 0.5
+    "SSV_Vehicle_Android_Strider_Ruined", 0.2,
+    "OPTRE_M12_CIV_IND", 0.5,
+    "OPTRE_Genet_IND", 0.8
 ];
 
 ["vehiclesCivCar", _civCarsWithWeights] call _fnc_saveToTemplate;
 
 ["vehiclesCivIndustrial", [
-    "SSV_Vehicle_Vanguard_Ifrit", 1.0
+    "SSV_Vehicle_Vanguard_Ifrit", 1.0,
+    "OPTRE_forklift_IND", 0.5
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivBoat", [
-    "C_Boat_Civil_01_rescue_F", 0.1
+    "optre_catfish_cma_unarmed_f", 0.1
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivRepair", [
-    "C_Truck_02_box_F", 0.3
+    "OPTRE_M914_RV_CMA", 0.3
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivMedical", ["SSV_Vehicle_Android_Strider_Ruined", 0.1]] call _fnc_saveToTemplate;
 
 ["vehiclesCivFuel", [
-    "C_Truck_02_fuel_F", 0.2
+    "OPTRE_m1015_mule_fuel_cma", 0.2
 ]] call _fnc_saveToTemplate;
 
-["vehiclesCivHeli", ["SSV_Vehicle_Vanguard_VTOL_Infantry"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["SSV_Vehicle_Vanguard_VTOL_Infantry", "OPTRE_CMA_falcon_unarmed"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
