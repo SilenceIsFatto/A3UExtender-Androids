@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img alt="Antistasi Ultimate Android Extender" width="250" height="250" src="https://github.com/SilenceIsFatto/A3UExtender-Androids/assets/78276788/4f6eb98f-c17a-4675-ab91-fc4cc72d09ab">
+  <img alt="Android Ascension" width="250" height="250" src="https://github.com/SilenceIsFatto/A3UExtender-Androids/assets/78276788/4f6eb98f-c17a-4675-ab91-fc4cc72d09ab">
 </div>
 
 ## Latest Stable Release

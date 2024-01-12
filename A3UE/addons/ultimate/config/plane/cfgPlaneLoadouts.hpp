@@ -8,16 +8,16 @@ class planeLoadouts
     // diveParams[]
     class CAS
     {
-        class B_Plane_CAS_01_dynamicLoadout_F
+        class OPTRE_YSS_1000_A
         {
-            loadout[] = {"PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F"};
+            loadout[] = {"OPTRE_STMedusa_6Rnd_AA_Missile","PylonMissile_1Rnd_Bomb_04_F","OPTRE_STMedusa_6Rnd_AA_Missile","PylonMissile_1Rnd_Bomb_04_F","OPTRE_M1024_2000Rnd_30mm"};
         };
     };
     class AA
     {
-        class B_Plane_Fighter_01_F
+        class OPTRE_YSS_1000_A
         {
-            loadout[] = {"PylonRack_Missile_BIM9X_x2","PylonRack_Missile_BIM9X_x2","PylonRack_Missile_BIM9X_x2","PylonRack_Missile_BIM9X_x2","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1"};
+            loadout[] = {"OPTRE_3Rnd_Jackknife_sabre_missile","PylonRack_1Rnd_Missile_AA_04_F","OPTRE_3Rnd_Jackknife_sabre_missile","PylonRack_1Rnd_Missile_AA_04_F","OPTRE_M1024_2000Rnd_30mm"};
         };
     };
 };

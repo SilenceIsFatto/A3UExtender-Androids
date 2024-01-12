@@ -8,7 +8,7 @@ class CfgPatches
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3A_Ultimate"}; // make sure this loads after Ultimate
+        requiredAddons[] = {"A3A_Ultimate"}; // makes sure this loads after Ultimate
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";

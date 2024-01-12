@@ -1,9 +1,3 @@
-//////////////////////////////
-//   Civilian Information   //
-//////////////////////////////
-
-["attributeCivNonHuman", true] call _fnc_saveToTemplate; // This is the main part that allows this template to act as "non-humans", e.g no civ rep loss
-
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
@@ -42,7 +36,7 @@ private _civCarsWithWeights = [
 //       Loadouts       //
 //////////////////////////
 
-["faces", ["SSV_android_face_01","SSV_android_face_02","SSV_android_face_03"]] call _fnc_saveToTemplate;
+// ["faces", ["SSV_replika_face_01","SSV_replika_face_02"]] call _fnc_saveToTemplate;
 
 private _civUniforms = [
     "SSV_Uniform_Android_Pilot",
@@ -100,27 +94,12 @@ private _pressTemplate = {
     ["compasses"] call _fnc_addCompass;
 };
 
-// This array (and the weights one below it), defines units and stuff that get used in towns
-private _specialUnits = [
-    "SSV_Unit_Android_Corrupted",
-    "SSV_Unit_Android_Corrupted_SL",
-    "SSV_Unit_Android_Corrupted_Melee",
-    "SSV_Unit_Android_Corrupted_Dasher"
-];
-
-private _specialUnitsWeights = [
-    1.0,
-    0.7,
-    0.5,
-    0.15
-];
-
 private _prefix = "militia";
 private _unitTypes = [
     ["Press", _pressTemplate], // to-do: allow press to spawn but make them special infected
     ["Worker", _workerTemplate], // needed to be normal for resources, factories, etc
     ["Man", _manTemplate],
-    ["Special", _manTemplate, [["baseClass", [_specialUnits, _specialUnitsWeights], true]]] // if you change the true to false, it will attempt to run the loadout script on your special units. You may or may not want this, so test first!
+    ["Special", _manTemplate, [["baseClass", "SSV_Unit_Android_Military", false]]] // if you change the true to false, it will attempt to run the loadout script on your special units. You may or may not want this, so test first!
 ];
 
 [_prefix, _unitTypes, _loadoutData] call _fnc_generateAndSaveUnitsToTemplate;

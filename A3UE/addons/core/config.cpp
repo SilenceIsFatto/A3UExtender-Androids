@@ -16,7 +16,9 @@ class CfgPatches
     };
 };
 
-class cfgVehicles
+#include "CfgMarkers.hpp"
+
+class CfgVehicles
 {
-    #include "cfgVehicles.hpp"
+    #include "CfgVehicles.hpp"
 };
