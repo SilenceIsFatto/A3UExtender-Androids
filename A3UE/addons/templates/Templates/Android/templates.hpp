@@ -27,6 +27,7 @@
     class Corrupted_Civ_Zombie : Android_Base
     {
         requiredAddons[] = {"WBK_ZombieCreatures", "SSV_Android_Zombies", "SSV_Vanguard", "OPTRE_Core"};
+        flagTexture = QPATHTOFOLDER(Templates\Android\images\flag_vanguard_ca.paa);
         priority = 10;
         side = "Civ";
         name = "Corrupted";
