@@ -6,6 +6,8 @@ build
 *.pbo
 *.pbo.bak
 *.bat
+*.bisign
+*.bikey
 AntistasiBuilder.cfg
 
 #Ignore mission files that have been copied to A3-Antistasi
