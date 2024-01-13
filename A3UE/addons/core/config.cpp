@@ -1,7 +1,9 @@
 #include "script_component.hpp"
 
-class CfgPatches {
-    class ADDON {
+class CfgPatches 
+{
+    class ADDON 
+    {
         name = COMPONENT_NAME;
         units[] = {};
         weapons[] = {};
@@ -12,4 +14,11 @@ class CfgPatches {
         authorUrl = "";
         VERSION_CONFIG;
     };
+};
+
+#include "CfgMarkers.hpp"
+
+class CfgVehicles
+{
+    #include "CfgVehicles.hpp"
 };
