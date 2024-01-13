@@ -7,7 +7,7 @@
 </div>
 
 ## Latest Stable Release
-**[Steam Workshop: Antistasi Ultimate Android Extender]()**
+**[Steam Workshop: Antistasi Ultimate Android Extender](https://steamcommunity.com/sharedfiles/filedetails/?id=3138539739)**
 
 ## Requirements
 **[Steam Workshop: Steam Collection](https://steamcommunity.com/sharedfiles/filedetails/?id=3137270053)**
