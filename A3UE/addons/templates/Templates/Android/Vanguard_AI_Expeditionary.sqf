@@ -4,7 +4,11 @@
 
 #include "..\..\script_component.hpp"
 
-["name", "Vanguard"] call _fnc_saveToTemplate; 						
+// Force the different groups
+missionNamespace setVariable ["A3U_setting_tierWarMilitia", 0, true];
+missionNamespace setVariable ["A3U_setting_tierWarElite", 1, true];
+
+["name", "Vanguard Expeditionary"] call _fnc_saveToTemplate; 						
 ["spawnMarkerName", "Vanguard Portal"] call _fnc_saveToTemplate; 			
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate; 						
@@ -20,34 +24,34 @@
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
 ["vehiclesBasic", ["B_Quadbike_01_F"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["SSV_Vehicle_Vanguard_Ifrit"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["OPTRE_M12_LRV_CMA", "OPTRE_M12_LRV_DME"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["ssv_vanguard_vehicle_m12_black", "ssv_vanguard_vehicle_m813_black"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["ssv_vanguard_vehicle_m12_mg_black"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["OPTRE_m1015_mule_cma", "OPTRE_m1015_mule_cover_cma"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["OPTRE_m1015_mule_cma", "OPTRE_m1015_mule_cover_cma"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["OPTRE_m1015_mule_ammo_cma"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["OPTRE_m1015_mule_repair_cma"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["OPTRE_m1015_mule_fuel_cma"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["SSV_Vehicle_Vanguard_Ifrit", "OPTRE_M12_FAV_APC_MED_CMA"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["OPTRE_M12_TD_CMA", "OPTRE_M12_FAV_APC_CMA"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["SSV_Vehicle_Vanguard_APC", "a3u_extender_vehicle_m494_black", "SSV_Vehicle_Vanguard_Tank"]] call _fnc_saveToTemplate;
-["vehiclesAPCs", ["SSV_Vehicle_Vanguard_APC", "a3u_extender_vehicle_m494_black"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["ssv_vanguard_vehicle_m411_black", "ssv_vanguard_vehicle_m412_black"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["ssv_vanguard_vehicle_m413_black", "a3u_extender_vehicle_m494_black", "SSV_Vehicle_Vanguard_Futura_Tank"]] call _fnc_saveToTemplate;
+["vehiclesAPCs", ["ssv_vanguard_vehicle_m413_black", "a3u_extender_vehicle_m494_black"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["a3u_extender_vehicle_m494_black"]] call _fnc_saveToTemplate;
 ["vehiclesLightTanks",  ["OPTRE_M808B_CMA"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["SSV_Vehicle_Vanguard_Tank", "a3u_extender_vehicle_m808b_black"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["OPTRE_M12R_AA_CMA"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["SSV_Vehicle_Vanguard_Futura_Tank", "a3u_extender_vehicle_m808b_black"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["ssv_vanguard_vehicle_m808b2a1_black"]] call _fnc_saveToTemplate;
 
-["vehiclesTransportBoats", ["optre_catfish_cma_unarmed_f"]] call _fnc_saveToTemplate;
-["vehiclesGunBoats", ["optre_catfish_cma_mg_f"]] call _fnc_saveToTemplate;
+["vehiclesTransportBoats", ["ssv_vanguard_vehicle_catfish_black"]] call _fnc_saveToTemplate;
+["vehiclesGunBoats", ["ssv_vanguard_vehicle_catfish_mg_black", "ssv_vanguard_vehicle_catfish_aa_black"]] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", ["SSV_Vehicle_Vanguard_APC"]] call _fnc_saveToTemplate;
 
 ["vehiclesPlanesCAS", ["OPTRE_YSS_1000_A"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["OPTRE_YSS_1000_A"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["a3u_extender_vehicle_blackfish_blue"]] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", ["SSV_Vehicle_Vanguard_VTOL_Infantry"]] call _fnc_saveToTemplate;
 
-["vehiclesHelisLight", ["OPTRE_CMA_falcon_unarmed"]] call _fnc_saveToTemplate;
-["vehiclesHelisTransport", ["OPTRE_Pelican_unarmed_CMA"]] call _fnc_saveToTemplate;
-["vehiclesHelisLightAttack", ["OPTRE_CMA_hornet", "OPTRE_CMA_falcon"]] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", ["OPTRE_Pelican_armed_CMA"]] call _fnc_saveToTemplate;
+["vehiclesHelisLight", ["ssv_vanguard_vehicle_falcon_black"]] call _fnc_saveToTemplate;
+["vehiclesHelisTransport", ["ssv_vanguard_vehicle_pelican_unarmed_black"]] call _fnc_saveToTemplate;
+["vehiclesHelisLightAttack", ["ssv_vanguard_vehicle_hornet_CAS_black"]] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", ["ssv_vanguard_vehicle_hornet_CAS_black"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["a3u_extender_vehicle_m875_black"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
@@ -155,8 +159,8 @@ _loadoutData set ["longRangeRadios", ["OPTRE_ANPRC_515"]];
 _loadoutData set ["atBackpacks", []];
 _loadoutData set ["slBackpacks", []];
 _loadoutData set ["helmets", []];
-_loadoutData set ["slHat", ["SSV_Helmet_Vanguard_R4"]];
-_loadoutData set ["sniHats", ["SSV_Helmet_Vanguard_Stealth"]];
+_loadoutData set ["slHat", ["SSV_Helmet_Vanguard_QRF_Expeditionary"]];
+_loadoutData set ["sniHats", ["SSV_Helmet_Vanguard_Pilot_Expeditionary"]];
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
@@ -198,43 +202,43 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_sfLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_J13"]];
-_sfLoadoutData set ["vests", ["SSV_Vest_Vanguard_J13_SL"]];
-_sfLoadoutData set ["mgVests", ["SSV_Vest_Vanguard_SMG"]];
-_sfLoadoutData set ["medVests", ["SSV_Vest_Vanguard_SL"]];
-_sfLoadoutData set ["glVests", ["SSV_Vest_Vanguard_SMG"]];
-_sfLoadoutData set ["backpacks", ["JMSJEFF_d2_backpack"]];
-_sfLoadoutData set ["slBackpacks", ["JMSJEFF_d2_backpack"]];
-_sfLoadoutData set ["atBackpacks", ["JMSJEFF_d2_backpack"]];
-_sfLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_R4"]];
-_sfLoadoutData set ["slHat", ["SSV_Helmet_Vanguard_QRF_L"]];
-_sfLoadoutData set ["sniHats", ["SSV_Helmet_Vanguard_Stealth"]];
+_sfLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_J13_Expeditionary"]];
+_sfLoadoutData set ["vests", ["SSV_Vest_Vanguard_QRF_Expeditionary"]];
+_sfLoadoutData set ["mgVests", ["Hotoke_Do_Machinegunner_EPSM"]];
+_sfLoadoutData set ["medVests", ["WX_PlateCarrier_LeaderGroup"]];
+_sfLoadoutData set ["glVests", ["Hotoke_Do_Machinegunner_EPSM_Shoulders"]];
+_sfLoadoutData set ["backpacks", ["Sinagami_Assault_Exo"]];
+_sfLoadoutData set ["slBackpacks", ["WebNiX_AssaultJetpack_Exo"]];
+_sfLoadoutData set ["atBackpacks", ["WebNiX_Assault_Exo"]];
+_sfLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_QRF_Expeditionary", "JMSJEFF_Jeff_R4_helmet"]];
+_sfLoadoutData set ["slHat", ["SSV_Helmet_Vanguard_Pilot_Expeditionary", "JMSJEFF_Jeff_tac_grey_helmet"]];
+_sfLoadoutData set ["sniHats", ["Sinagami_EPSM_Helmet_FULL"]];
 _sfLoadoutData set ["NVGs", ["JMSJEFF_NVChip"]];
 _sfLoadoutData set ["binoculars", ["OPTRE_Smartfinder"]];
 
 _sfLoadoutData set ["slRifles", [
-    ["SSV_Weapon_Android_MX_SW_Ruined", "", "OPTRE_BMR_Laser", "optic_Hamr", ["100Rnd_65x39_caseless_black_mag"], [], "bipod_01_F_blk"],
-    ["SSV_Weapon_Android_AK_Ruined", "", "", "optic_Arco_blk_F", ["30Rnd_762x39_AK12_Mag_F"], [], ""],
-    ["SSV_Weapon_Android_MSBS_Ruined", "", "OPTRE_BMR_Laser", "optic_ERCO_blk_F", ["30Rnd_65x39_caseless_msbs_mag"], [], ""]
+    ["AK15_EPSM_WEAPON", "", "OPTRE_BMR_Laser", "OPTRE_BMR_Scope", ["30rnd_762x39_AKEPSM"], [], ""],
+    ["WBK_EPSM_Scar_1_Black_H", "", "", "OPTRE_M393_EOTECH", ["Magazine_30rnd_556Scar_Black"], [], ""],
+    ["OPTRE_MA37BGL", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], ["1Rnd_SmokeGreen_Grenade_shell", "OPTRE_signalSmokeG", "OPTRE_1Rnd_MasterKey_Slugs"], ""]
 ]];
 _sfLoadoutData set ["rifles", [  
-    ["SSV_Weapon_Android_ARX_Ruined", "", "", "optic_ERCO_blk_F", ["30Rnd_65x39_caseless_green"], ["10Rnd_50BW_Mag_F"], "bipod_01_F_blk"],
-    ["SSV_Weapon_Android_AK_Ruined", "", "", "optic_Arco_blk_F", ["30Rnd_762x39_AK12_Mag_F"], [], ""],
-    ["SSV_Weapon_Android_MSBS_Ruined", "", "", "optic_ERCO_blk_F", ["30Rnd_65x39_caseless_msbs_mag"], [], ""]
+    ["OPTRE_MA37B", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["OPTRE_MA32B", "", "", "OPTRE_HMG38_CarryHandle", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["OPTRE_Commando_Black", "OPTRE_M6C_compensator", "", "OPTRE_BMR_Scope", ["Commando_20Rnd_65_Mag"], [], ""]
 ]];
 _sfLoadoutData set ["carbines", [  
-    ["SSV_Weapon_Android_ARX_Ruined", "", "", "optic_ERCO_blk_F", ["30Rnd_65x39_caseless_green"], ["10Rnd_50BW_Mag_F"], "bipod_01_F_blk"],
-    ["SSV_Weapon_Android_AK_Ruined", "", "", "optic_Arco_blk_F", ["30Rnd_762x39_AK12_Mag_F"], [], ""]
+    ["OPTRE_MA37K", "", "", "Optre_Recon_Sight", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["WRS_Weapon_AUG_NoGlow", "", "", "OPTRE_M393_EOTECH", ["WRS_Ar1_Magazine"], [], ""]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
-    ["SSV_Weapon_Android_ARX_Ruined", "", "", "optic_ERCO_blk_F", ["30Rnd_65x39_caseless_green"], ["10Rnd_50BW_Mag_F"], "bipod_01_F_blk"]
+    ["OPTRE_MA32GL", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], ["UGL_FlareGreen_F", "1Rnd_HE_Grenade_shell"], ""]
 ]];
 _sfLoadoutData set ["SMGs", [
-    ["JMSJEFF_yash1", "", "", "", ["JMSJEFF_30Rnd_Yash_magJMSJEFF_30Rnd_Yash_mag"], [], ""],
+    ["OPTRE_M7", "", "", "", ["OPTRE_60Rnd_5x23mm_Mag"], [], ""],
     ["OPTRE_CQS48S_Chihuahua_Automatic", "", "", "", ["OPTRE_12Rnd_12Gauge_Pellets"], [], ""]
 ]];
 _sfLoadoutData set ["machineGuns", [
-    ["SSV_Weapon_Android_MX_SW_Ruined", "", "", "optic_Hamr", ["100Rnd_65x39_caseless_black_mag"], [], "bipod_01_F_blk"]
+    ["OPTRE_M247H_Shield_Etilka", "", "", "", ["OPTRE_200Rnd_127x99_M247H_Etilka_Ball"], [], "bipod_03_F_blk"]
 ]];
 _sfLoadoutData set ["marksmanRifles", [
     ["SSV_Weapon_Vanguard_Pilum", "", "", "optic_Nightstalker", ["WRS_Sniper_Magazine"], [], ""]
@@ -252,59 +256,53 @@ _sfLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_eliteLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_QRF", "SSV_Uniform_Vanguard_Stealth"]];
-_eliteLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_black1_F_CombatUniform"]];
-_eliteLoadoutData set ["vests", ["SSV_Vest_Vanguard_QRF"]];
-_eliteLoadoutData set ["mgVests", ["SSV_Vest_Vanguard_SMG"]];
-_eliteLoadoutData set ["medVests", ["JMSJEFF_FarmorS_armor_black"]];
-_eliteLoadoutData set ["slVests", ["SSV_Vest_Vanguard_SL"]];
-_eliteLoadoutData set ["glVests", ["JMSJEFF_ChestVestS_armor_black"]];
-_eliteLoadoutData set ["engVests", ["SSV_Vest_Vanguard_J13_SL"]];
-_eliteLoadoutData set ["backpacks", ["OPTRE_ILCS_Rucksack_Black", "OPTRE_UNSC_Rucksack_Heavy"]];
-_eliteLoadoutData set ["slBackpacks", ["JMSJEFF_d2_backpack"]];
-_eliteLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
-_eliteLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_QRF", "SSV_Helmet_Vanguard_Miner"]];
-_eliteLoadoutData set ["sniHats", ["SSV_Helmet_Vanguard_Stealth"]];
-_eliteLoadoutData set ["binoculars", ["OPTRE_Binoculars"]];
+_eliteLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_J13_Expeditionary"]];
+_eliteLoadoutData set ["vests", ["SSV_Vest_Vanguard_QRF_Expeditionary"]];
+_eliteLoadoutData set ["mgVests", ["Hotoke_Do_Machinegunner_EPSM"]];
+_eliteLoadoutData set ["medVests", ["WX_PlateCarrier_LeaderGroup"]];
+_eliteLoadoutData set ["glVests", ["Hotoke_Do_Machinegunner_EPSM_Shoulders"]];
+_eliteLoadoutData set ["backpacks", ["Sinagami_Assault_Exo"]];
+_eliteLoadoutData set ["slBackpacks", ["WebNiX_AssaultJetpack_Exo"]];
+_eliteLoadoutData set ["atBackpacks", ["WebNiX_Assault_Exo"]];
+_eliteLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_QRF_Expeditionary", "JMSJEFF_Jeff_R4_helmet"]];
+_eliteLoadoutData set ["slHat", ["SSV_Helmet_Vanguard_Pilot_Expeditionary", "JMSJEFF_Jeff_tac_grey_helmet"]];
+_eliteLoadoutData set ["sniHats", ["Sinagami_EPSM_Helmet_FULL"]];
+_eliteLoadoutData set ["NVGs", ["JMSJEFF_NVChip"]];
+_eliteLoadoutData set ["binoculars", ["OPTRE_Smartfinder"]];
 
 _eliteLoadoutData set ["slRifles", [
-    ["OPTRE_MA37K", "", "", "OPTRE_M12_Optic", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
-    ["OPTRE_MA37B", "", "", "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
-    ["SSV_Weapon_Android_MSBS_Ruined", "muzzle_snds_65_TI_blk_F", "", "OPTRE_M393_EOTECH", ["30Rnd_65x39_caseless_msbs_mag"], [], ""]
+    ["AK15_EPSM_WEAPON", "", "OPTRE_BMR_Laser", "OPTRE_BMR_Scope", ["30rnd_762x39_AKEPSM"], [], ""],
+    ["WBK_EPSM_Scar_1_Black_H", "", "", "OPTRE_M393_EOTECH", ["Magazine_30rnd_556Scar_Black"], [], ""],
+    ["OPTRE_MA37BGL", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], ["1Rnd_SmokeGreen_Grenade_shell", "OPTRE_signalSmokeG", "OPTRE_1Rnd_MasterKey_Slugs"], ""]
 ]];
-_eliteLoadoutData set ["rifles", [
-    ["SSV_Weapon_Vanguard_Greyhound", "", "", "optic_Holosight_blk_F", ["WRS_Ar_Magazine"], [], ""],
-    ["SSV_Weapon_Vanguard_Bulldog", "", "", "optic_ERCO_blk_F", ["WRS_Ar1_Magazine"], [], ""],
-    ["SSV_Weapon_Android_MX_SW_Ruined", "", "", "optic_Hamr", ["30Rnd_65x39_caseless_black_mag"], [], ""]
+_eliteLoadoutData set ["rifles", [  
+    ["OPTRE_MA37B", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["OPTRE_MA32B", "", "", "OPTRE_HMG38_CarryHandle", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["OPTRE_Commando_Black", "OPTRE_M6C_compensator", "", "OPTRE_BMR_Scope", ["Commando_20Rnd_65_Mag"], [], ""]
 ]];
-_eliteLoadoutData set ["carbines", [
-    ["JMSJEFF_IMRRifle_white", "", "", "", ["JMSJEFF_30Rnd_IMR_mag"], [], ""],
-    ["JMSJEFF_arx160Rifle", "", "", "", ["JMSJEFF_30Rnd_ARX160_mag"], [], ""]
+_eliteLoadoutData set ["carbines", [  
+    ["OPTRE_MA37K", "", "", "Optre_Recon_Sight", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["WRS_Weapon_AUG_NoGlow", "", "", "OPTRE_M393_EOTECH", ["WRS_Ar1_Magazine"], [], ""]
 ]];
 _eliteLoadoutData set ["grenadeLaunchers", [
-    ["SSV_Weapon_Android_ARX_Ruined", "", "", "OPTRE_HMG38_CarryHandle", ["30Rnd_65x39_caseless_green"], ["10Rnd_50BW_Mag_F"], "bipod_01_F_blk"],
-    ["JMSJEFF_arx160GLRifle", "", "", "optic_Hamr", ["JMSJEFF_30Rnd_ARX160_mag"], ["1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "1Rnd_Smoke_Grenade_shell"], ""]
+    ["OPTRE_MA32GL", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], ["UGL_FlareGreen_F", "1Rnd_HE_Grenade_shell"], ""]
 ]];
 _eliteLoadoutData set ["SMGs", [
-    ["JMSJEFF_bal27Rifle", "", "", "", ["JMSJEFF_30Rnd_BAL_mag"], [], ""],
-    ["SSV_Weapon_Vanguard_Raptor", "", "", "optic_ACO_grn", ["WRS_Ar2_Magazine"], [], ""]
+    ["OPTRE_M7", "", "", "", ["OPTRE_60Rnd_5x23mm_Mag"], [], ""],
+    ["OPTRE_CQS48S_Chihuahua_Automatic", "", "", "", ["OPTRE_12Rnd_12Gauge_Pellets"], [], ""]
 ]];
 _eliteLoadoutData set ["machineGuns", [
-    ["SSV_Weapon_Android_MX_SW_Ruined", "", "", "optic_Hamr", ["100Rnd_65x39_caseless_black_mag"], [], "bipod_01_F_blk"],
-    ["OPTRE_M73", "", "", "", ["OPTRE_100Rnd_95x40_Box"], [], ""],
-    ["OPTRE_HMG38", "", "", "", ["OPTRE_40Rnd_30x06_Mag"], [], ""]
+    ["OPTRE_M247H_Shield_Etilka", "", "", "", ["OPTRE_200Rnd_127x99_M247H_Etilka_Ball"], [], "bipod_03_F_blk"]
 ]];
 _eliteLoadoutData set ["marksmanRifles", [
-    ["SSV_Weapon_Android_MXM_Ruined", "", "", "OPTRE_HMG38_CarryHandle", ["30Rnd_65x39_caseless_black_mag"], [], "bipod_01_F_blk"],
-    ["OPTRE_Commando_Snow", "", "", "OPTRE_HMG38_CarryHandle", ["Commando_20Rnd_65_Mag"], [], "bipod_01_F_blk"]
+    ["SSV_Weapon_Vanguard_Pilum", "", "", "optic_Nightstalker", ["WRS_Sniper_Magazine"], [], ""]
 ]];
 _eliteLoadoutData set ["sniperRifles", [
-    ["SSV_Weapon_Vanguard_Boomslang", "", "", "OPTRE_SRS99C_Scope", ["WRS_Boomslang_Magazine"], [], ""],
-    ["WRS_Weapon_Sniper", "", "", "OPTRE_SRS99_Scope", ["WRS_Sniper_Magazine"], [], ""]
+    ["SSV_Weapon_Vanguard_Boomslang", "", "", "optic_ico_01_black_f", ["WRS_Boomslang_Magazine"], [], ""],
+    ["SSV_Weapon_Vanguard_Rhino", "", "", "", ["WRS_Shockgun_Magazine"], [], ""]
 ]];
 _eliteLoadoutData set ["sidearms", [
-    ["OPTRE_M6G", "", "", "", ["OPTRE_8Rnd_127x40_AP_Mag"], [], ""],
-    ["SSV_Weapon_Vanguard_Constrictor", "", "", "", ["WRS_Revolver_Magazine"], [], ""]
+    ["WRS_Weapon_Revolver", "", "", "", ["WRS_Revolver_Magazine"], [], ""]
 ]];
 
 /////////////////////////////////
@@ -312,59 +310,53 @@ _eliteLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_militaryLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_Soldier", "SSV_Uniform_Vanguard_Worker"]];
-_militaryLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_black1_F_CombatUniform"]];
-_militaryLoadoutData set ["vests", ["SSV_Vest_Vanguard_Stealth"]];
-_militaryLoadoutData set ["mgVests", ["JMSJEFF_ChestVestS_armor_black"]];
-_militaryLoadoutData set ["medVests", ["JMSJEFF_ChestVestTroop_armor_black"]];
-_militaryLoadoutData set ["slVests", ["SSV_Vest_Vanguard_SL"]];
-_militaryLoadoutData set ["glVests", ["SSV_Vest_Vanguard_SMG"]];
-_militaryLoadoutData set ["engVests", ["SSV_Vest_Vanguard_J13_SL"]];
-_militaryLoadoutData set ["backpacks", ["OPTRE_ILCS_Rucksack_Black", "OPTRE_UNSC_Rucksack_Heavy"]];
-_militaryLoadoutData set ["slBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
-_militaryLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
-_militaryLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_Soldier", "SSV_Helmet_Vanguard_R2"]];
-_militaryLoadoutData set ["sniHats", ["SSV_Helmet_Vanguard_Stealth"]];
-_militaryLoadoutData set ["binoculars", ["OPTRE_Binoculars"]];
+_militaryLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_J13_Expeditionary"]];
+_militaryLoadoutData set ["vests", ["SSV_Vest_Vanguard_QRF_Expeditionary"]];
+_militaryLoadoutData set ["mgVests", ["Hotoke_Do_Machinegunner_EPSM"]];
+_militaryLoadoutData set ["medVests", ["WX_PlateCarrier_LeaderGroup"]];
+_militaryLoadoutData set ["glVests", ["Hotoke_Do_Machinegunner_EPSM_Shoulders"]];
+_militaryLoadoutData set ["backpacks", ["Sinagami_Assault_Exo"]];
+_militaryLoadoutData set ["slBackpacks", ["WebNiX_AssaultJetpack_Exo"]];
+_militaryLoadoutData set ["atBackpacks", ["WebNiX_Assault_Exo"]];
+_militaryLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_QRF_Expeditionary", "JMSJEFF_Jeff_R4_helmet"]];
+_militaryLoadoutData set ["slHat", ["SSV_Helmet_Vanguard_Pilot_Expeditionary", "JMSJEFF_Jeff_tac_grey_helmet"]];
+_militaryLoadoutData set ["sniHats", ["Sinagami_EPSM_Helmet_FULL"]];
+_militaryLoadoutData set ["NVGs", ["JMSJEFF_NVChip"]];
+_militaryLoadoutData set ["binoculars", ["OPTRE_Smartfinder"]];
 
 _militaryLoadoutData set ["slRifles", [
-    ["OPTRE_MA37K", "", "", "OPTRE_M12_Optic", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
-    ["OPTRE_MA37B", "", "", "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
-    ["SSV_Weapon_Android_MSBS_Ruined", "muzzle_snds_65_TI_blk_F", "", "OPTRE_M393_EOTECH", ["30Rnd_65x39_caseless_msbs_mag"], [], ""]
+    ["AK15_EPSM_WEAPON", "", "OPTRE_BMR_Laser", "OPTRE_BMR_Scope", ["30rnd_762x39_AKEPSM"], [], ""],
+    ["WBK_EPSM_Scar_1_Black_H", "", "", "OPTRE_M393_EOTECH", ["Magazine_30rnd_556Scar_Black"], [], ""],
+    ["OPTRE_MA37BGL", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], ["1Rnd_SmokeGreen_Grenade_shell", "OPTRE_signalSmokeG", "OPTRE_1Rnd_MasterKey_Slugs"], ""]
 ]];
-_militaryLoadoutData set ["rifles", [
-    ["SSV_Weapon_Vanguard_Greyhound", "", "", "optic_Holosight_blk_F", ["WRS_Ar_Magazine"], [], ""],
-    ["SSV_Weapon_Vanguard_Bulldog", "", "", "optic_ERCO_blk_F", ["WRS_Ar1_Magazine"], [], ""],
-    ["SSV_Weapon_Android_MX_SW_Ruined", "", "", "optic_Hamr", ["30Rnd_65x39_caseless_black_mag"], [], ""]
+_militaryLoadoutData set ["rifles", [  
+    ["OPTRE_MA37B", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["OPTRE_MA32B", "", "", "OPTRE_HMG38_CarryHandle", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["OPTRE_Commando_Black", "OPTRE_M6C_compensator", "", "OPTRE_BMR_Scope", ["Commando_20Rnd_65_Mag"], [], ""]
 ]];
-_militaryLoadoutData set ["carbines", [
-    ["JMSJEFF_IMRRifle_white", "", "", "", ["JMSJEFF_30Rnd_IMR_mag"], [], ""],
-    ["JMSJEFF_arx160Rifle", "", "", "", ["JMSJEFF_30Rnd_ARX160_mag"], [], ""]
+_militaryLoadoutData set ["carbines", [  
+    ["OPTRE_MA37K", "", "", "Optre_Recon_Sight", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["WRS_Weapon_AUG_NoGlow", "", "", "OPTRE_M393_EOTECH", ["WRS_Ar1_Magazine"], [], ""]
 ]];
 _militaryLoadoutData set ["grenadeLaunchers", [
-    ["SSV_Weapon_Android_ARX_Ruined", "", "", "OPTRE_HMG38_CarryHandle", ["30Rnd_65x39_caseless_green"], ["10Rnd_50BW_Mag_F"], "bipod_01_F_blk"],
-    ["JMSJEFF_arx160GLRifle", "", "", "optic_Hamr", ["JMSJEFF_30Rnd_ARX160_mag"], ["1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "1Rnd_Smoke_Grenade_shell"], ""]
+    ["OPTRE_MA32GL", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], ["UGL_FlareGreen_F", "1Rnd_HE_Grenade_shell"], ""]
 ]];
 _militaryLoadoutData set ["SMGs", [
-    ["JMSJEFF_bal27Rifle", "", "", "", ["JMSJEFF_30Rnd_BAL_mag"], [], ""],
-    ["SSV_Weapon_Vanguard_Raptor", "", "", "optic_ACO_grn", ["WRS_Ar2_Magazine"], [], ""]
+    ["OPTRE_M7", "", "", "", ["OPTRE_60Rnd_5x23mm_Mag"], [], ""],
+    ["OPTRE_CQS48S_Chihuahua_Automatic", "", "", "", ["OPTRE_12Rnd_12Gauge_Pellets"], [], ""]
 ]];
 _militaryLoadoutData set ["machineGuns", [
-    ["SSV_Weapon_Android_MX_SW_Ruined", "", "", "optic_Hamr", ["100Rnd_65x39_caseless_black_mag"], [], "bipod_01_F_blk"],
-    ["OPTRE_M73", "", "", "", ["OPTRE_100Rnd_95x40_Box"], [], ""],
-    ["OPTRE_HMG38", "", "", "", ["OPTRE_40Rnd_30x06_Mag"], [], ""]
+    ["OPTRE_M247H_Shield_Etilka", "", "", "", ["OPTRE_200Rnd_127x99_M247H_Etilka_Ball"], [], "bipod_03_F_blk"]
 ]];
 _militaryLoadoutData set ["marksmanRifles", [
-    ["SSV_Weapon_Android_MXM_Ruined", "", "", "OPTRE_HMG38_CarryHandle", ["30Rnd_65x39_caseless_black_mag"], [], "bipod_01_F_blk"],
-    ["OPTRE_Commando_Snow", "", "", "OPTRE_HMG38_CarryHandle", ["Commando_20Rnd_65_Mag"], [], "bipod_01_F_blk"]
+    ["SSV_Weapon_Vanguard_Pilum", "", "", "optic_Nightstalker", ["WRS_Sniper_Magazine"], [], ""]
 ]];
 _militaryLoadoutData set ["sniperRifles", [
-    ["SSV_Weapon_Vanguard_Boomslang", "", "", "OPTRE_SRS99C_Scope", ["WRS_Boomslang_Magazine"], [], ""],
-    ["WRS_Weapon_Sniper", "", "", "OPTRE_SRS99_Scope", ["WRS_Sniper_Magazine"], [], ""]
+    ["SSV_Weapon_Vanguard_Boomslang", "", "", "optic_ico_01_black_f", ["WRS_Boomslang_Magazine"], [], ""],
+    ["SSV_Weapon_Vanguard_Rhino", "", "", "", ["WRS_Shockgun_Magazine"], [], ""]
 ]];
 _militaryLoadoutData set ["sidearms", [
-    ["OPTRE_M6G", "", "", "", ["OPTRE_8Rnd_127x40_AP_Mag"], [], ""],
-    ["SSV_Weapon_Vanguard_Constrictor", "", "", "", ["WRS_Revolver_Magazine"], [], ""]
+    ["WRS_Weapon_Revolver", "", "", "", ["WRS_Revolver_Magazine"], [], ""]
 ]];
 
 ///////////////////////////////
@@ -373,13 +365,14 @@ _militaryLoadoutData set ["sidearms", [
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 
-_policeLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_Soldier"]];
-_policeLoadoutData set ["vests", ["SSV_Vest_Vanguard_QRF_Marksman"]];
-_policeLoadoutData set ["helmets", ["JMSJEFF_Mariner_F_black_helmet", "OPTRE_UNSC_CH252_Helmet2_URB"]];
+_policeLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_J13_Expeditionary"]];
+_policeLoadoutData set ["vests", ["SSV_Vest_Vanguard_SMG_Expeditionary", "SSV_Vest_Vanguard_QRF_Expeditionary"]];
+_policeLoadoutData set ["helmets", ["JMSJEFF_Jeff_tac_grey_helmet", "SSV_Helmet_Vanguard_QRF_Expeditionary"]];
 
 _policeLoadoutData set ["SMGs", [
-    ["SSV_Weapon_Vanguard_Bulldog", "", "", "", ["WRS_Ar1_Magazine"], [], ""],
-    ["JMSJEFF_arx160Rifle", "", "", "optic_Hamr", ["JMSJEFF_30Rnd_ARX160_mag"], [], ""]
+    ["AK15_EPSM_WEAPON", "", "OPTRE_BMR_Laser", "OPTRE_BMR_Scope", ["30rnd_762x39_AKEPSM"], [], ""],
+    ["WBK_EPSM_Scar_1_Black_H", "", "", "OPTRE_M393_EOTECH", ["Magazine_30rnd_556Scar_Black"], [], ""],
+    ["OPTRE_MA37BGL", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], ["1Rnd_SmokeGreen_Grenade_shell", "OPTRE_signalSmokeG", "OPTRE_1Rnd_MasterKey_Slugs"], ""]
 ]];
 _policeLoadoutData set ["sidearms", [
     ["SSV_Weapon_Vanguard_Constrictor", "", "", "", ["WRS_Revolver_Magazine"], [], ""],
@@ -391,59 +384,53 @@ _policeLoadoutData set ["sidearms", [
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_militiaLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_Soldier", "SSV_Uniform_Vanguard_Worker"]];
-_militiaLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_black1_F_CombatUniform"]];
-_militiaLoadoutData set ["vests", ["SSV_Vest_Vanguard_Stealth"]];
-_militiaLoadoutData set ["mgVests", ["JMSJEFF_ChestVestS_armor_black"]];
-_militiaLoadoutData set ["medVests", ["JMSJEFF_ChestVestTroop_armor_black"]];
-_militiaLoadoutData set ["slVests", ["SSV_Vest_Vanguard_SL"]];
-_militiaLoadoutData set ["glVests", ["SSV_Vest_Vanguard_SMG"]];
-_militiaLoadoutData set ["engVests", ["SSV_Vest_Vanguard_J13_SL"]];
-_militiaLoadoutData set ["backpacks", ["OPTRE_ILCS_Rucksack_Black", "OPTRE_UNSC_Rucksack_Heavy"]];
-_militiaLoadoutData set ["slBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
-_militiaLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
-_militiaLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_Soldier", "SSV_Helmet_Vanguard_R2"]];
-_militiaLoadoutData set ["sniHats", ["SSV_Helmet_Vanguard_Stealth"]];
-_militiaLoadoutData set ["binoculars", ["OPTRE_Binoculars"]];
+_militiaLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_J13_Expeditionary"]];
+_militiaLoadoutData set ["vests", ["SSV_Vest_Vanguard_QRF_Expeditionary"]];
+_militiaLoadoutData set ["mgVests", ["Hotoke_Do_Machinegunner_EPSM"]];
+_militiaLoadoutData set ["medVests", ["WX_PlateCarrier_LeaderGroup"]];
+_militiaLoadoutData set ["glVests", ["Hotoke_Do_Machinegunner_EPSM_Shoulders"]];
+_militiaLoadoutData set ["backpacks", ["Sinagami_Assault_Exo"]];
+_militiaLoadoutData set ["slBackpacks", ["WebNiX_AssaultJetpack_Exo"]];
+_militiaLoadoutData set ["atBackpacks", ["WebNiX_Assault_Exo"]];
+_militiaLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_QRF_Expeditionary", "JMSJEFF_Jeff_R4_helmet"]];
+_militiaLoadoutData set ["slHat", ["SSV_Helmet_Vanguard_Pilot_Expeditionary", "JMSJEFF_Jeff_tac_grey_helmet"]];
+_militiaLoadoutData set ["sniHats", ["Sinagami_EPSM_Helmet_FULL"]];
+_militiaLoadoutData set ["NVGs", ["JMSJEFF_NVChip"]];
+_militiaLoadoutData set ["binoculars", ["OPTRE_Smartfinder"]];
 
 _militiaLoadoutData set ["slRifles", [
-    ["OPTRE_MA37K", "", "", "OPTRE_M12_Optic", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
-    ["OPTRE_MA37B", "", "", "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
-    ["SSV_Weapon_Android_MSBS_Ruined", "muzzle_snds_65_TI_blk_F", "", "OPTRE_M393_EOTECH", ["30Rnd_65x39_caseless_msbs_mag"], [], ""]
+    ["AK15_EPSM_WEAPON", "", "OPTRE_BMR_Laser", "OPTRE_BMR_Scope", ["30rnd_762x39_AKEPSM"], [], ""],
+    ["WBK_EPSM_Scar_1_Black_H", "", "", "OPTRE_M393_EOTECH", ["Magazine_30rnd_556Scar_Black"], [], ""],
+    ["OPTRE_MA37BGL", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], ["1Rnd_SmokeGreen_Grenade_shell", "OPTRE_signalSmokeG", "OPTRE_1Rnd_MasterKey_Slugs"], ""]
 ]];
-_militiaLoadoutData set ["rifles", [
-    ["SSV_Weapon_Vanguard_Greyhound", "", "", "optic_Holosight_blk_F", ["WRS_Ar_Magazine"], [], ""],
-    ["SSV_Weapon_Vanguard_Bulldog", "", "", "optic_ERCO_blk_F", ["WRS_Ar1_Magazine"], [], ""],
-    ["SSV_Weapon_Android_MX_SW_Ruined", "", "", "optic_Hamr", ["30Rnd_65x39_caseless_black_mag"], [], ""]
+_militiaLoadoutData set ["rifles", [  
+    ["OPTRE_MA37B", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["OPTRE_MA32B", "", "", "OPTRE_HMG38_CarryHandle", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["OPTRE_Commando_Black", "OPTRE_M6C_compensator", "", "OPTRE_BMR_Scope", ["Commando_20Rnd_65_Mag"], [], ""]
 ]];
-_militiaLoadoutData set ["carbines", [
-    ["JMSJEFF_IMRRifle_white", "", "", "", ["JMSJEFF_30Rnd_IMR_mag"], [], ""],
-    ["JMSJEFF_arx160Rifle", "", "", "", ["JMSJEFF_30Rnd_ARX160_mag"], [], ""]
+_militiaLoadoutData set ["carbines", [  
+    ["OPTRE_MA37K", "", "", "Optre_Recon_Sight", ["OPTRE_32Rnd_762x51_Mag"], [], ""],
+    ["WRS_Weapon_AUG_NoGlow", "", "", "OPTRE_M393_EOTECH", ["WRS_Ar1_Magazine"], [], ""]
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
-    ["SSV_Weapon_Android_ARX_Ruined", "", "", "OPTRE_HMG38_CarryHandle", ["30Rnd_65x39_caseless_green"], ["10Rnd_50BW_Mag_F"], "bipod_01_F_blk"],
-    ["JMSJEFF_arx160GLRifle", "", "", "optic_Hamr", ["JMSJEFF_30Rnd_ARX160_mag"], ["1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "1Rnd_Smoke_Grenade_shell"], ""]
+    ["OPTRE_MA32GL", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], ["UGL_FlareGreen_F", "1Rnd_HE_Grenade_shell"], ""]
 ]];
 _militiaLoadoutData set ["SMGs", [
-    ["JMSJEFF_bal27Rifle", "", "", "", ["JMSJEFF_30Rnd_BAL_mag"], [], ""],
-    ["SSV_Weapon_Vanguard_Raptor", "", "", "optic_ACO_grn", ["WRS_Ar2_Magazine"], [], ""]
+    ["OPTRE_M7", "", "", "", ["OPTRE_60Rnd_5x23mm_Mag"], [], ""],
+    ["OPTRE_CQS48S_Chihuahua_Automatic", "", "", "", ["OPTRE_12Rnd_12Gauge_Pellets"], [], ""]
 ]];
 _militiaLoadoutData set ["machineGuns", [
-    ["SSV_Weapon_Android_MX_SW_Ruined", "", "", "optic_Hamr", ["100Rnd_65x39_caseless_black_mag"], [], "bipod_01_F_blk"],
-    ["OPTRE_M73", "", "", "", ["OPTRE_100Rnd_95x40_Box"], [], ""],
-    ["OPTRE_HMG38", "", "", "", ["OPTRE_40Rnd_30x06_Mag"], [], ""]
+    ["OPTRE_M247H_Shield_Etilka", "", "", "", ["OPTRE_200Rnd_127x99_M247H_Etilka_Ball"], [], "bipod_03_F_blk"]
 ]];
 _militiaLoadoutData set ["marksmanRifles", [
-    ["SSV_Weapon_Android_MXM_Ruined", "", "", "OPTRE_HMG38_CarryHandle", ["30Rnd_65x39_caseless_black_mag"], [], "bipod_01_F_blk"],
-    ["OPTRE_Commando_Snow", "", "", "OPTRE_HMG38_CarryHandle", ["Commando_20Rnd_65_Mag"], [], "bipod_01_F_blk"]
+    ["SSV_Weapon_Vanguard_Pilum", "", "", "optic_Nightstalker", ["WRS_Sniper_Magazine"], [], ""]
 ]];
 _militiaLoadoutData set ["sniperRifles", [
-    ["SSV_Weapon_Vanguard_Boomslang", "", "", "OPTRE_SRS99C_Scope", ["WRS_Boomslang_Magazine"], [], ""],
-    ["WRS_Weapon_Sniper", "", "", "OPTRE_SRS99_Scope", ["WRS_Sniper_Magazine"], [], ""]
+    ["SSV_Weapon_Vanguard_Boomslang", "", "", "optic_ico_01_black_f", ["WRS_Boomslang_Magazine"], [], ""],
+    ["SSV_Weapon_Vanguard_Rhino", "", "", "", ["WRS_Shockgun_Magazine"], [], ""]
 ]];
 _militiaLoadoutData set ["sidearms", [
-    ["OPTRE_M6G", "", "", "", ["OPTRE_8Rnd_127x40_AP_Mag"], [], ""],
-    ["SSV_Weapon_Vanguard_Constrictor", "", "", "", ["WRS_Revolver_Magazine"], [], ""]
+    ["WRS_Weapon_Revolver", "", "", "", ["WRS_Revolver_Magazine"], [], ""]
 ]];
 
 //////////////////////////
@@ -451,20 +438,19 @@ _militiaLoadoutData set ["sidearms", [
 //////////////////////////
 
 private _crewLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_crewLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_J13"]];
-_crewLoadoutData set ["vests", ["SSV_Vest_Vanguard_Marksman"]];
-_crewLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_Worker"]];
+_crewLoadoutData set ["uniforms", ["OPTRE_UNSC_Navy_Uniform_ONI"]];
+_crewLoadoutData set ["vests", ["SSV_Vest_Vanguard_QRF_Expeditionary"]];
+_crewLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_Drone_Expeditionary"]];
 _crewLoadoutData set ["carbines", [
-    ["SSV_Weapon_Android_MSBS_Ruined", "", "", "OPTRE_M393_EOTECH", ["30Rnd_65x39_caseless_msbs_mag"], [], ""]
+    ["AK15U_EPSM_WEAPON", "", "", "OPTRE_M393_EOTECH", ["30rnd_762x39_AKEPSM"], [], ""]
 ]];	
 
 private _pilotLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_J13"]];
-_pilotLoadoutData set ["vests", ["JMSJEFF_Farmor_L_armor_black"]];
-_pilotLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_Drone"]];
+_pilotLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_J13_Expeditionary"]];
+_pilotLoadoutData set ["vests", ["SSV_Vest_Vanguard_QRF_Expeditionary"]];
+_pilotLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_Drone_Expeditionary"]];
 _pilotLoadoutData set ["carbines", [
-    ["SSV_Weapon_Android_MX_Ruined", "", "", "OPTRE_HMG38_CarryHandle", ["30Rnd_65x39_caseless_black_mag"], [], ""],
-    ["SSV_Weapon_Android_MX_Ruined", "", "", "OPTRE_SRM_Sight", ["30Rnd_65x39_caseless_black_mag"], [], ""]
+    ["AK15U_EPSM_WEAPON", "", "", "OPTRE_M393_EOTECH", ["30rnd_762x39_AKEPSM"], [], ""]
 ]];
 
 /////////////////////////////////

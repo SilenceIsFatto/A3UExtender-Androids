@@ -23,10 +23,26 @@
         file = "Vanguard_AI_Army";
         description = "The Vanguard is a unique faction, accepting any androids into their ranks. They are an industrial empire, with a mercenary division.";
     };
+    class Vanguard_Expeditionary : Vanguard_Army
+    {
+        requiredAddons[] = {"SSV_Android", "SSV_Vanguard", "OPTRE_Core", "ExoMod_Universality_Uniforms"};
+        name = "Vanguard Expeditionary";
+        file = "Vanguard_AI_Expeditionary";
+        description = "THIS FACTION FORCES SF INSTEAD OF MILITIA/MILITARY/ELITE.\n\nThe Vanguard Expeditonary is a sub faction of the Vanguard. Dedicated to pretty much anything that Vanguard needs doing on the low. From security detail to infiltration, they are well suited to the task with many vehicles and special exo-suits.";
+    };
+
+    class Replika_Riv : Android_Base
+    {
+        requiredAddons[] = {"SSV_Android", "SSV_Vanguard", "OPTRE_Core"};
+        side = "Riv";
+        name = "Replikas";
+        file = "Vanguard_Riv_Replika";
+        description = "Replikas are rogue androids. On the surface, they can look like any other android. Replikas have formed an insurgency, sporting red colours instead of blue. Their only goal is to create chaos.";
+    };
 
     class Corrupted_Civ_Zombie : Android_Base
     {
-        requiredAddons[] = {"WBK_ZombieCreatures", "SSV_Android_Zombies", "SSV_Vanguard", "OPTRE_Core"};
+        requiredAddons[] = {"WBK_ZombieCreatures", "SSV_Android_Zombies", "SSV_Vanguard", "OPTRE_Core", "ExoMod_Universality_Uniforms"};
         flagTexture = QPATHTOFOLDER(Templates\Android\images\flag_vanguard_ca.paa);
         priority = 10;
         side = "Civ";
